@@ -1,5 +1,6 @@
 <Project>
   <PropertyGroup>
+    <!-- If you set this you have to build from command line -->
     <XamarinFormsSource></XamarinFormsSource>
     <__XFBuildTasksLocation>$(_XFBuildTasksLocation)</__XFBuildTasksLocation>
     <__XFBuildTasksLocation Condition="'$(__XFBuildTasksLocation)' == '' AND '$(MSBuildRuntimeType)' == 'Core'">$(MSBuildThisFileDirectory).nuspec\netstandard2.0\</__XFBuildTasksLocation>
