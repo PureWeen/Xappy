@@ -1,4 +1,3 @@
 <Project>
   <Import Project="Source.targets" Condition="$(FromSource) == 'true'" />
-  <Import Project="Nuget.targets" Condition="$(FromSource) == 'false'" />
 </Project>

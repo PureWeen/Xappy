@@ -1,7 +1,3 @@
 <Project>
-
-
   <Import Project="Source.targets" Condition="$(FromSource) == 'true' AND '$(AbiBreakTest)' == 'false'" />
-  <Import Project="Nuget.targets" Condition="$(FromSource) == 'false' OR '$(AbiBreakTest)' == 'true'" />
-
 </Project>
