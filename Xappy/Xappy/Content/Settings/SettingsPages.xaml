@@ -68,7 +68,7 @@
                 SelectedItem="{Binding SelectedTheme}"
                 HeightRequest="120">
                 <CollectionView.ItemsLayout>
-                    <ListItemsLayout Orientation="Horizontal"
+                    <LinearItemsLayout Orientation="Horizontal"
 
 ItemSpacing="10"/>
                 </CollectionView.ItemsLayout>
