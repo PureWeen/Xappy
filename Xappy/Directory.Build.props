@@ -7,6 +7,6 @@
     
     <FromSource Condition="'$(XamarinFormsSource)' != ''">true</FromSource>
     <FromSource Condition="'$(XamarinFormsSource)' == ''">false</FromSource>
-    <XamarinFormsVersion></XamarinFormsVersion>
+    <!--<XamarinFormsVersion>4.3.0.817118-pre2</XamarinFormsVersion>-->
   </PropertyGroup>
  </Project>
