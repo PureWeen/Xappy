@@ -21,6 +21,7 @@ namespace Xappy.UWP
         {
             this.InitializeComponent();
 
+
             LoadApplication(new Xappy.App());
         }
     }
