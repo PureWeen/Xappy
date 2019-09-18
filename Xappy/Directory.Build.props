@@ -1,13 +1,16 @@
 <Project>
   <PropertyGroup>
     <!-- If you set this you have to build from command line -->
-    <XamarinFormsSource></XamarinFormsSource>
+    <!--<XamarinFormsSource></XamarinFormsSource>-->
     <__XFBuildTasksLocation>$(_XFBuildTasksLocation)</__XFBuildTasksLocation>
     <__XFBuildTasksLocation Condition="'$(__XFBuildTasksLocation)' == '' AND '$(MSBuildRuntimeType)' == 'Core'">$(MSBuildThisFileDirectory).nuspec\netstandard2.0\</__XFBuildTasksLocation>
     <__XFBuildTasksLocation Condition="'$(__XFBuildTasksLocation)' == ''">$(MSBuildThisFileDirectory).nuspec\net46\</__XFBuildTasksLocation>
     
     <FromSource Condition="'$(XamarinFormsSource)' != ''">true</FromSource>
     <FromSource Condition="'$(XamarinFormsSource)' == ''">false</FromSource>
+    
+    <!-- msbuild /p:XamarinFormsVersion="4.2.0.819158" /t:rebuild /p:RestoreSources="h:\NugetLocation"-->
     <!--<XamarinFormsVersion>4.3.0.817118-pre2</XamarinFormsVersion>-->
+    
   </PropertyGroup>
  </Project>
