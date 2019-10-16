@@ -14,7 +14,7 @@ using Xappy.Styles;
 [assembly: Android.App.MetaData("com.google.android.maps.v2.API_KEY", Value = Xappy.ApiConstants.GoogleMapsKey)]
 namespace Xappy.Droid
 {
-    [Activity(Label = "Xappy", Icon = "@mipmap/icon", Theme = "@style/MainTheme.Launcher", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Xappy", Icon = "@mipmap/icon", Theme = "@style/MainTheme.Launcher", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         internal static MainActivity Instance { get; private set; }
@@ -48,24 +48,23 @@ namespace Xappy.Droid
             base.OnConfigurationChanged(newConfig);
             //var configuration = this.Resources.Configuration;
             //int currentNightMode = ((int)configuration.UiMode) & ((int)Configuration.UiModeNightMask);
-            switch (newConfig.UiMode)
+            if ((newConfig.UiMode & UiMode.NightNo) != 0)
             {
-                case UiMode.NightNo:
-                    // Night mode is not active, we're using the light theme
-                    if (App.AppTheme != "dark")
-                        return;
-                    App.Current.Resources = new WhiteTheme();
-                    App.AppTheme = "light";
-                    break;
-                case UiMode.NightYes:
-                    // Night mode is active, we're using dark theme
-                    if (App.AppTheme == "dark")
-                        return;
-                    //Add a Check for App Theme since this is called even when not changed really
-                    App.Current.Resources = new DarkTheme();
+                if (App.AppTheme != "dark")
+                    return;
+                App.Current.Resources = new WhiteTheme();
+                App.AppTheme = "light";
 
-                    App.AppTheme = "dark";
-                    break;
+            }
+            else
+            {
+                // Night mode is active, we're using dark theme
+                if (App.AppTheme == "dark")
+                    return;
+                //Add a Check for App Theme since this is called even when not changed really
+
+                App.Current.Resources = new DarkTheme();
+                App.AppTheme = "dark";
             }
         }
 
